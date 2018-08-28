@@ -1,0 +1,159 @@
+#header{
+	background-color: #0d0d0d;
+	padding: 15px 5px;
+	font-size: 25px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+}
+
+#errMsg{
+	color: red;
+	font-style: italic;
+	padding: 5px;
+}
+
+.movies{
+	background-color: #bbff99;
+}
+
+#head{
+	background-color: white;
+	color: black;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#span-head{
+	background-color: black;
+	color: white;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+#searchpan{
+	margin: 40px 160px;
+	background-color: #0d0d0d;
+	color: white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#searchrow{
+	background-color: #333333;
+}
+
+.card{
+	margin: 10px;
+}
+
+.card-body{
+	background-color: black;
+	color: white;
+	border-top-color: white;
+	border-top-style: solid;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius:10px;
+}
+
+.card-img-top{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+.card-title{
+	font-weight: bold;
+}
+
+#moviePic{
+	display: block;
+	padding: 50px;
+	width: 100%;
+}
+
+
+#title{
+	padding-top: 20px;
+	text-align: center;
+	background-color: black;
+	font-family: 'Comic Sans MS';
+	color: white;
+	border-radius: 10px;
+}
+
+#plot{
+	padding: 15px;
+	font-style: italic;
+	font-size: 20px;
+	background-color: black;
+	font-family: 'Comic Sans MS';
+	color: white;
+	border-radius: 20px;
+}
+
+#movieD span{
+	display: block;
+	padding: 2px 7px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#movieD .headin{
+	font-weight: bold;
+	margin-right: 5px;
+	background-color: black;
+	color: white;
+	padding:2px;
+	border-radius: 5px;
+}
+
+
+#movieD .row{
+	padding-bottom: 10px;
+}
+
+#movieD .container{
+	padding: 25px 0;
+}
+
+#movie button{
+	margin: 10px 5px;
+	float: right;
+}
+
+@media only screen and (max-width: 992px) {
+    #searchpan{
+		margin: 40px 100px;
+	}
+	#moviePic{
+		padding: 40px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+    #searchpan{
+		margin: 40px 50px;
+	}
+	#moviePic{
+		padding: 30px;
+	}
+	#title{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+    #searchpan{
+		margin: 40px 20px;
+	}
+	#moviePic{
+		padding: 20px;
+	}
+}
+/*
+.card img{
+	height: 60%;
+}
+
+.card-body{
+	height: 25%;
+}*/
