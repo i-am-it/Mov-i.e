@@ -1,5 +1,5 @@
 $(document).ready(()=>{
-	console.log("idna")
+	//console.log("idna")
 	let idBool = false
 	let titleBool = false
 	let yearBool = false
@@ -50,7 +50,7 @@ $(document).ready(()=>{
 
 	$("#inlineRadio1").change(()=>{
 		$("#errMsg").text("")
-		console.log("id")
+		//console.log("id")
 		$("#inputTitle").val("")
 		$("#inputYear").val("")
 		$("#inputTitle").attr("readonly",true)
@@ -70,7 +70,7 @@ $(document).ready(()=>{
 
 	$("#inlineRadio2").change(()=>{
 		$("#errMsg").text("")
-		console.log("name")
+		//console.log("name")
 		$("#inputId").val("")
 		$("#inputYear").val("")
 		$("#inputTitle").attr("readonly",false)
@@ -89,7 +89,7 @@ $(document).ready(()=>{
 
 	$("#inlineRadio3").change(()=>{
 		$("#errMsg").text("")
-		console.log("year")
+		//console.log("year")
 		$("#inputId").val("")
 		$("#inputTitle").attr("readonly",false)
 		$("#inputId").attr("readonly",true)
@@ -97,7 +97,7 @@ $(document).ready(()=>{
 	})
 	console.log("nhi hua")
 	$("body").click((event)=>{
-		console.log("huaa")
+		//console.log("huaa")
 		let clas = $(event.target).attr('class')
 		if (clas.includes("findMovie")) {
 		console.log("hua")
@@ -117,19 +117,19 @@ $(document).ready(()=>{
 
 let getMovies = (tits)=>{
 	console.log("making request")
-	console.log(tits);
+	//console.log(tits);
 	$(".showData").html("")
     $.ajax({
         type: 'GET', // request type GET, POST, PUT
         dataType: 'json', // requesting datatype
         async:true,
-        url: `http://www.omdbapi.com/?s=${tits}&apikey=9127e66a`, // URL of getting data
+        url: `https://www.omdbapi.com/?s=${tits}&apikey=8dfd7bf4`, // URL of getting data
         success: (data) => { // in case of success response
             
-            console.log(data)
+            //console.log(data)
             if (data.Response === "True") {
 	            let allMovie = data.Search
-	            console.log(allMovie)
+	            //console.log(allMovie)
 
 	            for(movie of allMovie){
 
@@ -154,7 +154,7 @@ let getMovies = (tits)=>{
            
         },
         error: (data) => { // in case of error response
-        	console.log(data)
+        	//console.log(data)
             $("#errMsg").text("Please, try again. Make sure your internet is working")
 
         },
@@ -193,16 +193,16 @@ let getMovies = (tits)=>{
 
 let getMovieById = (imdbID)=>{
 	console.log("making request")
-	console.log(imdbID);
+	//console.log(imdbID);
 
     $.ajax({
         type: 'GET', // request type GET, POST, PUT
         dataType: 'json', // requesting datatype
         async:true,
-        url: `http://www.omdbapi.com/?i=${imdbID}&apikey=9127e66a`, // URL of getting data
+        url: `https://www.omdbapi.com/?i=${imdbID}&apikey=8dfd7bf4`, // URL of getting data
         success: (data) => { // in case of success response
             
-            console.log(data)
+            //console.log(data)
             if (data.Response === "True") {
             	$("#movie").addClass("show")
 	            $("#movies").removeClass("show")
@@ -372,14 +372,14 @@ let getMovieById = (imdbID)=>{
 
 
 let getMovieByYear = (tit,yea)=>{
-	console.log("making request")
-	console.log(tit);
+	//console.log("making request")
+	//console.log(tit);
 	$(".showData").html("")
     $.ajax({
         type: 'GET', // request type GET, POST, PUT
         dataType: 'json', // requesting datatype
         async:true,
-        url: `http://www.omdbapi.com/?s=${tit}&y=${yea}&apikey=9127e66a`, // URL of getting data
+        url: `https://www.omdbapi.com/?s=${tit}&y=${yea}&apikey=8dfd7bf4`, // URL of getting data
         success: (data) => { // in case of success response
             
             console.log(data)
