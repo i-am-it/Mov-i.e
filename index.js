@@ -9,6 +9,7 @@ $(document).ready(()=>{
 		idBool = $('#inlineRadio1').prop('checked')
 		titleBool = $('#inlineRadio2').prop('checked')
 		yearBool = $('#inlineRadio3').prop('checked')
+		//checking which radio-button is selected
 
 		if(idBool){
 			let leId = $("#inputId").val()
@@ -44,27 +45,13 @@ $(document).ready(()=>{
 				getMovieByYear(title,year)
 			}
 		}
+		//if none throw error
 		else
 		{
 			$("#errMsg").text("Select a valid Search Criteria")
 		}
 	})
 
-	// $( ".form-check-input" ).click(()=> {
-	// 	console.log("click"+idBool+titleBool)
- //  		idBool = $('#inlineRadio1').prop('checked')
-	// 	titleBool = $('#inlineRadio2').prop('checked')
-	// 	console.log("clicked"+idBool+titleBool)
-	// 	if(idBool){
-	// 		$("#inputTitle").val("")
-	// 		$("#inputYear").val("")
-	// 	}
-
-	// 	if(titleBool){
-	// 		$("#inputId").val("")
-	// 		$("#inputYear").val("")
-	// 	}
-	// });
 
 	$("#inlineRadio1").change(()=>{
 		$("#errMsg").text("")
@@ -74,16 +61,6 @@ $(document).ready(()=>{
 		$("#inputTitle").attr("readonly",true)
 		$("#inputId").attr("readonly",false)
 		$("#inputYear").attr("readonly",true)
-		// idBool = $('#inlineRadio1').prop('checked')
-		// if (idBool) {
-		// 	console.log(idBool)
-		// 	$("form").submit((event)=>{
-		// 		 event.preventDefault();
-		// 		let leId = $("#inputId").val()
-		// 		console.log(leId)
-		// 		getMovieById(leId)
-		// 	})
-		// }
 	})
 
 	$("#inlineRadio2").change(()=>{
@@ -94,15 +71,6 @@ $(document).ready(()=>{
 		$("#inputTitle").attr("readonly",false)
 		$("#inputId").attr("readonly",true)
 		$("#inputYear").attr("readonly",true)
-		// let titleBool = $('#inlineRadio2').prop('checked')
-		// if (titleBool) {
-		// 	$("form").submit((event)=>{
-		// 		 event.preventDefault();
-		// 		title = $("#inputTitle").val()
-		// 		console.log(title)
-		// 		getMovies(title)
-		// 	})
-		// }
 	})
 
 	$("#inlineRadio3").change(()=>{
@@ -190,14 +158,8 @@ let getMovies = (tits)=>{
   			$('#myModal').modal('show')
   			$('#target').loadingOverlay();
 
-  // Removing the loading overlay
-
         },
         complete: () => {
-
-            
-  // Calling the plugin
-  // (prepends a div.loading to the target element)
 
   // Removing the loading overlay
   			$('#target').loadingOverlay('remove');
@@ -374,14 +336,9 @@ let getMovieById = (imdbID)=>{
   			$('#myModal').modal('show')
   			$('#target').loadingOverlay();
 
-  // Removing the loading overlay
 
         },
         complete: () => {
-
-            
-  // Calling the plugin
-  // (prepends a div.loading to the target element)
 
   // Removing the loading overlay
   			$('#target').loadingOverlay('remove');
@@ -450,14 +407,9 @@ let getMovieByYear = (tit,yea)=>{
   			$('#myModal').modal('show')
   			$('#target').loadingOverlay();
 
-  // Removing the loading overlay
-
         },
         complete: () => {
 
-            
-  // Calling the plugin
-  // (prepends a div.loading to the target element)
 
   // Removing the loading overlay
   			$('#target').loadingOverlay('remove');
