@@ -12,19 +12,37 @@ $(document).ready(()=>{
 
 		if(idBool){
 			let leId = $("#inputId").val()
-			console.log(leId)
-			getMovieById(leId)
+			if (leId === "") {
+				$("#errMsg").text("Opps! Looks like you forgot to enter the ID.")
+			}
+			else{
+				console.log(leId)
+				getMovieById(leId)
+			}
 		}
 		else if(titleBool){
 			let title = $("#inputTitle").val()
-			console.log(title)
-			getMovies(title)
+			if (title === "") {
+				$("#errMsg").text("Opps! Looks like you forgot to enter the Title.")
+			}
+			else{
+				console.log(title)
+				getMovies(title)
+			}
 		}
 		else if(yearBool){
 			let title = $("#inputTitle").val()
 			let year = $("#inputYear").val()
-			console.log(title)
-			getMovieByYear(title,year)
+			if (title === "") {
+				$("#errMsg").text("Please, enter the name of the movie/series you are looking for.")
+			}
+			else if (year === "") {
+				$("#errMsg").text("Opps! Looks like you forgot to enter the year.")
+			}
+			else {
+				console.log(title)
+				getMovieByYear(title,year)
+			}
 		}
 		else
 		{
@@ -128,6 +146,10 @@ let getMovies = (tits)=>{
             
             //console.log(data)
             if (data.Response === "True") {
+            	$('html, body').animate({
+				    scrollTop: $(".showData").offset().top
+				  }, 1000)
+            	$("#errMsg").text("")
 	            let allMovie = data.Search
 	            //console.log(allMovie)
 
@@ -204,6 +226,7 @@ let getMovieById = (imdbID)=>{
             
             //console.log(data)
             if (data.Response === "True") {
+            	$("#errMsg").text("")
             	$("#movie").addClass("show")
 	            $("#movies").removeClass("show")
 	            $("#search").removeClass("show")
@@ -384,6 +407,11 @@ let getMovieByYear = (tit,yea)=>{
             
             console.log(data)
             if (data.Response === "True") {
+            	$('html, body').animate({
+				    scrollTop: $(".showData").offset().top
+				  }, 1000)
+            	$(".showData").focus()
+            	$("#errMsg").text("")
 	            let allMovie = data.Search
 	            console.log(allMovie)
 
